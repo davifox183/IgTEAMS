@@ -15,7 +15,7 @@ export default function App() {
       backgroundColor="transparent"
       translucent
       />
-      <Groups/>      
+      {fontsLoader ? <Groups/> : <ActivityIndicator/>}      
     </ThemeProvider>
   );
 }
