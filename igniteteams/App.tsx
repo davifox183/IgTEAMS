@@ -1,4 +1,4 @@
-import { Groups } from "@screens/Groups";
+import { NewGroup } from "@screens/NewGroup";
 import { ThemeProvider } from "styled-components/native";
 import theme from "./src/theme";
 import { Loading } from "@components/Loading";
@@ -15,7 +15,7 @@ export default function App() {
       backgroundColor="transparent"
       translucent
       />
-      {fontsLoader ? <Groups/> : <ActivityIndicator/>}      
+      {fontsLoader ? <NewGroup/> : <ActivityIndicator/>}      
     </ThemeProvider>
   );
 }
