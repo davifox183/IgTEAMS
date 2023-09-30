@@ -16,8 +16,8 @@ export function NewGroup(){
                 />
                 <Input />
                 <Button 
-                title="Criar"
-                style={{marginTop: 20}}
+                    title="Criar"
+                    style={{marginTop: 20}}
                 />
             </Content>
         </Container>
