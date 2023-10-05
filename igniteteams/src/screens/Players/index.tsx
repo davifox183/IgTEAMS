@@ -2,6 +2,7 @@ import { Input } from "@components/Input";
 import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
+import { Filter } from "@components/Filter";
 
 import { Container, Form } from "./style";
 
@@ -16,14 +17,18 @@ export function Players(){
             />
             
             <Form>
-            <Input
-                placeholder="Nome da Pessoa"
-                autoCorrect={false}
-            />
-            <ButtonIcon 
-                icon="add"
-            />
+                <Input
+                    placeholder="Nome da Pessoa"
+                    autoCorrect={false}
+                />
+                <ButtonIcon 
+                    icon="add"
+                />
             </Form>
+            <Filter
+                title="Time A"
+                isActive
+            />
         </Container>
     );
 }
