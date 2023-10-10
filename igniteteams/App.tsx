@@ -6,6 +6,7 @@ import theme from "./src/theme";
 import { Loading } from "@components/Loading";
 import { StatusBar, ActivityIndicator } from "react-native";
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
+import { Routes } from './src/routes';
 
 export default function App() {
   const[fontsLoader] = useFonts({Roboto_400Regular, Roboto_700Bold});
@@ -17,7 +18,7 @@ export default function App() {
       backgroundColor="transparent"
       translucent
       />
-      {fontsLoader ? <Players/> : <ActivityIndicator/>}      
+      {fontsLoader ? <Routes/> : <ActivityIndicator/>}      
     </ThemeProvider>
   );
 }
