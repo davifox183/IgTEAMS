@@ -1,11 +1,12 @@
-import { Header } from "@components/Header";
-import { Container, Content, Icon } from "./style";
-import { Highlight } from "@components/Highlight";
-import { Button } from "@components/Button";
-import { Input } from "@components/Input";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useState } from "react";
+import { Input } from "@components/Input";
+import { Header } from "@components/Header";
+import { Button } from "@components/Button";
+import { Highlight } from "@components/Highlight";
+import { Container, Content, Icon } from "./style";
+import { useNavigation } from "@react-navigation/native";
+import { groupCreate } from "@storage/group/groupCreate";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 
 export function NewGroup(){
@@ -13,9 +14,14 @@ export function NewGroup(){
 
     const [group, setGroup] = useState('');
 
-    function handleNew(){
-        navigation.navigate('players', {group});
-    }
+    async function handleNew(){
+        try{
+            await groupCreate(group);
+            navigation.navigate('players', {group});
+        }catch(error){
+          console.log(error);
+        }
+      }
     return(
         <Container>
             <Header showBackButton/>
